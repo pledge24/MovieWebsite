@@ -1,4 +1,4 @@
-import options from "../src/apikey.js";
+import options from "./apikey.js";
 
 const $cardList = document.querySelector(".card-list");
 const $searchButton = document.querySelector("#search-btn");
