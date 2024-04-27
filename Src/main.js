@@ -1,4 +1,4 @@
-import options from "../Movie Website/apikey.js";
+import options from "../src/apikey.js";
 
 const $cardList = document.querySelector(".card-list");
 const $searchButton = document.querySelector("#search-btn");
@@ -6,6 +6,13 @@ const $searchInputText = document.querySelector("#search-input");
 
 let movie_list;
 let details;
+// const options = {
+//   method: 'GET',
+//   headers: {
+//     accept: 'application/json',
+//     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNTczM2JlZWJiMmJhNmZlOWRiY2QxYWZiYWMzNGY4NyIsInN1YiI6IjY2MmExNzQwMzNhNTMzMDA5YmQxZDI5ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.iy6fJyWI7Os_VFgPwtAcFHOby3PIXzVRbiV3cOSk3cc'
+//   }
+// };
 
 fetch('https://api.themoviedb.org/3/configuration', options)
   .then(response => response.json())
