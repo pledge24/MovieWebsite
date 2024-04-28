@@ -61,7 +61,7 @@ function setPages(nextPageNO) {
     btn.textContent = _newPageNO;
     _newPageNO++;
   })
-  pageNo = _nextPageNO;
+  pageNo = nextPageNO;
 
   // 다음 페이지 영화카드 추가
   fetch(`https://api.themoviedb.org/3/movie/top_rated?language=ko-KR&page=${pageNo}`, options)
