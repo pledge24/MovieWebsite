@@ -1,19 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
 * {
+    font-family: "Gowun Dodum", sans-serif;
+
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
   
   body {
-    /* background: url("../assets/bg.png") center/cover no-repeat; */
     background: url("../Assets/bg.png") center/cover no-repeat;
     min-height: 100vh;
   }
   
   .card-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     justify-content: center;
+    border-bottom: 1px solid black;
   }
   
   .movie-card {
@@ -21,6 +25,7 @@
     margin: 20px;
     padding: 20px;
     width: 300px;
+    justify-content: center;
     justify-self: center;
     background-color: bisque;
     border-radius: 10px;
@@ -66,4 +71,26 @@
   
   h3 {
     margin-bottom: 10px;
+  }
+
+  .bottom:first-child{
+    display: flex;
+    justify-content: center;
+  }
+
+  nav a{
+    text-decoration: none;
+    color:black;
+    margin: 2em;
+  }
+
+  .bottom button{
+    margin: 20px;
+    width: 100px;
+    height : 80px;
+    font-weight: bold;
+  }
+
+  .bottom #cur-page{
+    color: red;
   }
