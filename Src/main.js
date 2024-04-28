@@ -56,9 +56,15 @@ function setPages(nextPageNO) {
   }
 
   // 페이지 버튼 번호 재설정
-  let _newPageNO = nextPageNO - 2 > 1 ? nextPageNO - 2 : 1;
+  let _newPageNO = nextPageNO - 2 > 1 ? nextPageNO - 2 : 1; 
   $bottomButtonList.forEach(btn => {
     btn.textContent = _newPageNO;
+    if(_newPageNO === nextPageNO){
+      btn.style = "color : red";
+    }
+    else{
+      btn.style = "color : white";
+    }
     _newPageNO++;
   })
   pageNo = nextPageNO;
@@ -111,7 +117,9 @@ function createMovieCards() {
         <h3 class="movie-title">${movie.original_title}</h3>
         <p>${movie.overview}</p>
         <br>
-        <p>평점: ${Number(movie.vote_average).toFixed(1)}</p>
+        <div class="movie-rate">
+          <b>평점: ${Number(movie.vote_average).toFixed(2)}</b>
+        </div>
       </div>
     `;
 
@@ -119,11 +127,11 @@ function createMovieCards() {
 
     const _card = _cardContainer.querySelector('.movie-card');
 
-    _cardContainer.addEventListener('click', function () {
+    _card.addEventListener('click', function () {
       alert("영화 id: " + _card.id);
     });
 
-    // 마우스가 해당 범위에서 움직였을 때 발생하는 이벤트
+    // 마우스가 각 카드 범위에서 움직였을 때 발생하는 이벤트
     _cardContainer.addEventListener('mousemove', function (e) {
       let x = e.offsetX;
       let y = e.offsetY;
@@ -134,7 +142,7 @@ function createMovieCards() {
    
     })
 
-    // 마우스가 해당 범위를 벗어났을 때 발생하는 이벤트
+    // 마우스가 각 카드 범위를 벗어났을 때 발생하는 이벤트
     _cardContainer.addEventListener('mouseleave', function (e) {
 
       _card.style = `

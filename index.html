@@ -12,14 +12,18 @@
 
 <body>
     <header>
-        <h1>나만의 최고 평점 영화</h1>
-        <!-- <button id = "test">test</button> -->
+        <div class = "search">
+            <input id="search-input" placeholder="Search movies..." autofocus/>
+            <button id="search-btn">Go</button>
+        </div>   
     </header>
-    <div class = "search">
-        <label>영화 검색 : </label>
-        <input type="text" id="search-input" placeholder="영화 제목을 검색해 보세요" autofocus/>
-        <button type="submit" id="search-btn">검색</button>
+
+    <div class="sign-area">
+        <div class="sign"><p>Welcome to my movie website!</p></div>      
+        <div class="copyRight"><p>Made by.윤형석</p></div>
     </div>
+    
+
     <section class="card-list">
         <!-- <div class="movie-card" id="278">
             <img src="" alt="The Shawshank Redemption">
@@ -32,9 +36,9 @@
     <div>      
         <nav class="bottom">
             <button id="prev-btn">이전 페이지</button>
-            <button class="bottom-elem" >1</button> 
+            <button class="bottom-elem" style="color:red">1</button> 
             <button class="bottom-elem">2</button> 
-            <button class="bottom-elem" id="cur-page">3</button> 
+            <button class="bottom-elem">3</button> 
             <button class="bottom-elem">4</button> 
             <button class="bottom-elem">5</button>      
             <button id="next-btn">다음 페이지</button>
