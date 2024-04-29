@@ -50,6 +50,7 @@ function init(){
   $homeButton.addEventListener("click", function (){
     window.location.reload();
   });
+
 }
 
 // 해당 페이지의 영화 목록을 카드로 가져오는 함수
@@ -83,9 +84,11 @@ function setPages(nextPageNO) {
     })
     .catch(err => console.error(err));
   
+  // 스크롤 맨 위로 이동.
+  window.scrollTo(0,0);
 }
 
-// 이전 페이지 버튼 클릭 이벤트 추가
+// "이전 페이지" 버튼 클릭 이벤트 추가
 $prevButton.addEventListener("click", function () {
   if (pageNo <= 1) {
     alert("맨 처음 페이지입니다.");
@@ -98,10 +101,10 @@ $prevButton.addEventListener("click", function () {
 
 })
 
-// 다음 페이지 버튼 클릭 이벤트 추가
+// "다음 페이지" 버튼 클릭 이벤트 추가
 $nextButton.addEventListener("click", function () {
 
-  let _nextPageNO = pageNo + 5;
+  let _nextPageNO = pageNo + $bottomButtonList.length;
   setPages(_nextPageNO);
 })
 
@@ -185,6 +188,9 @@ function searchMovies() {
       movie_card.parentElement.style.display = 'none';
     }
   });
+
+  // 스크롤 y 600 위치로 이동.
+  window.scrollTo(0,600);
 
   // ---확인용---
   // alert(`내가 입력한 내용은 바로 ${search_text}인 것이다!`);
