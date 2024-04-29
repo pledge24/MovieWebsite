@@ -40,7 +40,7 @@ function init(){
   // 페이지 버튼에 이벤트 추가
   $bottomButtonList.forEach(btn => {
     btn.addEventListener("click", function () {
-      console.log(btn.textContent);
+      //console.log(btn.textContent);
       
       let _nextPageNO = Number(btn.textContent);
       setPages(_nextPageNO);
@@ -55,14 +55,30 @@ function init(){
 
 // 해당 페이지의 영화 목록을 카드로 가져오는 함수
 // nextPageNO: 이동할 페이지 번호
-function setPages(nextPageNO) {
+let setPages = (nextPageNO) => {
   // 기존에 있던 카드들 전부 삭제
   while ($cardList.hasChildNodes()) {
     $cardList.removeChild($cardList.firstChild);
   }
 
+  let page_arr = [];
+  for(let i = -2; i <= 2; i++){
+    page_arr.push(i+nextPageNO);
+  }
+
+  function find_invalid(num){
+    return num < 1;
+  }
+
+  let _newPageNO;
+  if(page_arr.find(find_invalid) === undefined){
+    _newPageNO = nextPageNO - 2;
+  }
+  else{
+    _newPageNO = 1;
+  }
+
   // 페이지 버튼 번호 재설정
-  let _newPageNO = nextPageNO - 2 > 1 ? nextPageNO - 2 : 1; 
   $bottomButtonList.forEach(btn => {
     btn.textContent = _newPageNO;
     if(_newPageNO === nextPageNO){
