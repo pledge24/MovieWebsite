@@ -39,8 +39,21 @@
     background: rgb(54, 140, 169);
   }
 
+  header{
+    position: relative;
+    .Home {
+      position: absolute;
+      left:10px;
+
+      button{
+        width : 100px;
+        height : 40px;
+      }
+    }
+  }
+
   .search {
-    width: 100%;
+    width: 50%;
     display: flex;
     justify-content: center;
     padding: 20px 0;
@@ -89,7 +102,7 @@
     justify-content: center;
     align-items: center;
     display: flex;
-    background-image: url('https://t1.daumcdn.net/news/201804/19/singlelist/20180419183537445quxa.jpg');
+    background-image: url('../Assets/sign_bg.jpg');
     background-position: center;
     background-size: cover;
 

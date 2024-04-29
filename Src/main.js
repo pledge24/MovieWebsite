@@ -6,15 +6,18 @@ const $searchInputText = document.querySelector("#search-input");
 const $prevButton = document.querySelector("#prev-btn");
 const $nextButton = document.querySelector("#next-btn");
 const $bottomButtonList = document.querySelectorAll(".bottom-elem");
+const $homeButton = document.querySelector('#Home-btn');
 
 let movieList;
 let movieConfig;
-let pageNo = 1;
+let pageNo;
 
-let init = false;
+init();
 
 // 웹페이지 처음 진입 시 실행
-if (!init) {
+function init(){
+ 
+  pageNo = 1;
 
   // base_url가져옴
   fetch('https://api.themoviedb.org/3/configuration', options)
@@ -44,7 +47,9 @@ if (!init) {
     })
   })
 
-  init = true;
+  $homeButton.addEventListener("click", function (){
+    window.location.reload();
+  });
 }
 
 // 해당 페이지의 영화 목록을 카드로 가져오는 함수
@@ -202,8 +207,8 @@ $searchInputText.addEventListener("keyup", function (e) {
     searchMovies();
   }
   else {
-    console.log("다른거");
-    searchMovies();
+    // console.log("다른거");
+    // searchMovies();
   }
 });
 
